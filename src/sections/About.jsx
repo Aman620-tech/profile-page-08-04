@@ -25,14 +25,14 @@ export const About = () => {
                 {summary}
               </p>
             </FadeUp>
-            <FadeUp delay={0.15}>
+            {/* <FadeUp delay={0.15}>
               <a
                 href={`mailto:${personal.email}`}
                 className="btn-primary inline-flex"
               >
-                Let's Talk
+                Let's Talk  //  redirect to the contact us 
               </a>
-            </FadeUp>
+            </FadeUp> */}
           </div>
 
           {/* Right: Highlights */}
