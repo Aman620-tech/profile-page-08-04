@@ -5,7 +5,7 @@ import { resumeData } from "../utils/resumeData";
 const { personal } = resumeData;
 
 const RESUME_DOWNLOAD_URL =
-  "https://drive.google.com/uc?export=download&id=1tT2W-Fha_N1pPomLwnWRq11QeN0F2RnE";
+  "https://drive.google.com/uc?export=download&id=1Tbnxhg7r1fnFa45xy3v4PASCsRg1dvJa";
 
 const containerVariants = {
   hidden: {},
@@ -14,12 +14,20 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 export const Hero = () => {
   const handleResumeDownload = () => {
-    window.open(RESUME_DOWNLOAD_URL, "_blank");
+    const a = document.createElement("a");
+    a.href = RESUME_DOWNLOAD_URL;
+    a.download = "Aman_Kumar_Pandey_Resume.pdf";
+    a.target = "_blank";
+    a.click();
   };
 
   return (
@@ -57,7 +65,9 @@ export const Hero = () => {
             {personal.name.split(" ").map((word, i) => (
               <span
                 key={i}
-                className={i === 0 ? "block" : i === 1 ? "block" : "block gradient-text"}
+                className={
+                  i === 0 ? "block" : i === 1 ? "block" : "block gradient-text"
+                }
               >
                 {word}
               </span>
@@ -65,7 +75,10 @@ export const Hero = () => {
           </motion.h1>
 
           {/* Role */}
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-3 mb-6"
+          >
             <span className="w-8 h-px bg-accent" />
             <span className="font-mono text-accent text-sm tracking-widest uppercase">
               {personal.role}
@@ -81,7 +94,10 @@ export const Hero = () => {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 mb-16">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap items-center gap-4 mb-16"
+          >
             <a href="#projects" className="btn-primary">
               View Projects
               <ArrowDown size={16} />
@@ -93,7 +109,10 @@ export const Hero = () => {
           </motion.div>
 
           {/* Social links */}
-          <motion.div variants={itemVariants} className="flex items-center gap-6">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-6"
+          >
             <a
               href={personal.linkedin}
               target="_blank"
@@ -104,8 +123,9 @@ export const Hero = () => {
               <span className="hidden sm:inline">LinkedIn</span>
             </a>
             <span className="w-px h-4 bg-ink-muted" />
-            
-            <a  href={`mailto:${personal.email}`}
+
+            <a
+              href={`mailto:${personal.email}`}
               className="flex items-center gap-2 text-silver-dim hover:text-frost transition-colors text-sm font-mono"
             >
               <Mail size={16} />
@@ -121,7 +141,9 @@ export const Hero = () => {
           transition={{ delay: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-silver-dim"
         >
-          <span className="font-mono text-xs tracking-widest uppercase">Scroll</span>
+          <span className="font-mono text-xs tracking-widest uppercase">
+            Scroll
+          </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
