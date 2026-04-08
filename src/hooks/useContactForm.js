@@ -32,17 +32,28 @@ export const useContactForm = () => {
 
     setStatus("submitting");
 
+    const templateParams = {
+      from_name: values.name,
+      from_email: values.email,
+      message: values.message,
+      reply_to: values.email,
+    };
+
     try {
+      // 1️⃣ Send notification email TO YOU
       await emailjs.send(
-       process.env.REACT_APP_EMAILJS_SERVICE_ID,
-       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: values.name,
-          from_email: values.email,
-          message: values.message,
-          reply_to: values.email,
-        },
-       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      // 2️⃣ Send auto-reply TO THE SENDER
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
 
       setStatus("success");

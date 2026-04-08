@@ -4,7 +4,8 @@ export const resumeData = {
   personal: {
     name: "Aman Kumar Pandey",
     role: "Software Developer",
-    tagline: "Building scalable backend systems & cloud-native APIs that power real products.",
+    tagline:
+      "Building scalable backend systems & cloud-native APIs that power real products.",
     email: "pandeyaman997@gmail.com",
     // phone: "+919993935261",
     linkedin: "https://linkedin.com/in/aman-k-pandey",
@@ -13,18 +14,30 @@ export const resumeData = {
     resumeUrl: "#",
   },
 
-  summary: `Software Developer with ~4 years of experience architecting robust backend systems, 
-  RESTful APIs, and microservices at scale. Deep expertise in Node.js, AWS cloud infrastructure, 
-  and polyglot persistence. I've owned end-to-end feature delivery for live global platforms, 
-  led engineering teams, and driven product reliability from inception through production.`,
+  summary: `Backend-focused Full Stack Developer with strong expertise in designing scalable APIs, 
+database architectures, and secure backend systems using Node.js and MongoDB/MySQL. 
 
-  highlights: [
-    "Owned backend architecture for a live global artist marketplace",
-    "Led end-to-end serverless workflows via AWS Lambda at production scale",
-    "Mentored interns & junior engineers through sprint planning & code reviews",
-    "Integrated payment systems (Stripe, Razorpay) and OAuth flows",
-    "Configured AWS infrastructure: EC2, S3, RDS, ELB, VPC, CloudWatch",
-  ],
+Experienced in building end-to-end applications with React on the frontend, ensuring 
+seamless integration between client and server. 
+
+Hands-on experience with cloud platforms like AWS, including deployment, storage, and 
+basic infrastructure management. 
+
+Passionate about writing clean, maintainable code and building systems that are efficient, 
+reliable, and production-ready.`,
+  // summary: `Software Developer with ~4 years of experience architecting robust backend systems,
+  // RESTful APIs, and microservices at scale. Deep expertise in Node.js, AWS cloud infrastructure,
+  // and polyglot persistence. I've owned end-to-end feature delivery for live global platforms,
+  // led engineering teams, and driven product reliability from inception through production.`,
+
+highlights: [
+  "Owned backend architecture, ensuring scalability, reliability, and performance",
+  "Built scalable REST APIs using Node.js and Express with clean architecture",
+  "Designed and optimized databases using MongoDB and MySQL",
+  "Worked with AWS services (Lambda, EC2, S3, RDS, VPC) for deployment and infrastructure",
+  "Implemented secure authentication (JWT, OAuth) and integrated payment systems (Stripe, Razorpay)",
+  "Optimized performance and handled high-volume concurrent requests efficiently"
+],
 
   experience: [
     {
@@ -52,13 +65,22 @@ export const resumeData = {
       url: "#",
       period: "Jul 2022 – Nov 2022",
       type: "Full-time",
-      description: "Full-stack development of internal and client-facing web applications.",
+      description:
+        "Full-stack development of internal and client-facing web applications.",
       achievements: [
         "Built full-stack applications including an account management tool and a file-sharing platform.",
         "Integrated Stripe payment gateway and Google OAuth for secure authentication flows.",
         "Configured AWS S3 for scalable file storage and access control.",
       ],
-      tech: [, "NodeJs", "MongoDB", "Razorpay", "AWS S3", "OAuth","TypeScript","ReactJs"
+      tech: [
+        ,
+        "NodeJs",
+        "MongoDB",
+        "Razorpay",
+        "AWS S3",
+        "OAuth",
+        "TypeScript",
+        "ReactJs",
       ],
     },
   ],
@@ -117,10 +139,30 @@ export const resumeData = {
   ],
 
   skills: {
-    Frontend: ["HTML5", "CSS3", "JavaScript", "React.js",  ],
-    Backend: ["Node.js", "Express.js","TypeScript" ,"Sequelize", "Mongoose", "REST APIs", "Microservices", "Stripe", "Razorpay"],
+    Frontend: ["HTML5", "CSS3", "JavaScript", "React.js"],
+    Backend: [
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "Sequelize",
+      "Mongoose",
+      "REST APIs",
+      "Microservices",
+      "Stripe",
+      "Razorpay",
+    ],
     Database: ["MongoDB", "MySQL", "PostgreSQL", "Oracle"],
-    Cloud: ["AWS EC2", "AWS S3", "AWS Lambda", "AWS RDS", "IAM", "ELB", "CloudWatch", "SNS", "AutoScaling"],
+    Cloud: [
+      "AWS EC2",
+      "AWS S3",
+      "AWS Lambda",
+      "AWS RDS",
+      "IAM",
+      "ELB",
+      "CloudWatch",
+      "SNS",
+      "AutoScaling",
+    ],
   },
 
   education: [
