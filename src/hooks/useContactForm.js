@@ -3,27 +3,47 @@ import emailjs from "@emailjs/browser";
 
 const validate = (values) => {
   const errors = {};
-  if (!values.name.trim()) errors.name = "Name is required";
-  if (!values.email.trim()) errors.email = "Email is required";
-  else if (!/\S+@\S+\.\S+/.test(values.email)) errors.email = "Invalid email address";
-  if (!values.message.trim()) errors.message = "Message is required";
-  else if (values.message.trim().length < 10) errors.message = "Message too short";
+
+  if (!values.name.trim()) {
+    errors.name = "Name is required";
+  }
+
+  if (!values.email.trim()) {
+    errors.email = "Email is required";
+  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+
+  if (!values.message.trim()) {
+    errors.message = "Message is required";
+  } else if (values.message.trim().length < 10) {
+    errors.message = "Message too short";
+  }
+
   return errors;
 };
 
 export const useContactForm = () => {
-  const [values, setValues] = useState({ name: "", email: "", message: "" });
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const validationErrors = validate(values);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -58,6 +78,7 @@ export const useContactForm = () => {
 
       setStatus("success");
       setValues({ name: "", email: "", message: "" });
+
     } catch (error) {
       console.error("EmailJS error:", error);
       setStatus("error");

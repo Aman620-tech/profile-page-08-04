@@ -14,30 +14,18 @@ export const resumeData = {
     resumeUrl: "#",
   },
 
-  summary: `Backend-focused Full Stack Developer with strong expertise in designing scalable APIs, 
-database architectures, and secure backend systems using Node.js and MongoDB/MySQL. 
+  summary: `Backend-focused Full Stack Developer specializing in building high-performance, scalable APIs and distributed systems using Node.js. Experienced in designing efficient database architectures with MongoDB and MySQL, and deploying production-grade applications on AWS.
 
-Experienced in building end-to-end applications with React on the frontend, ensuring 
-seamless integration between client and server. 
+  Skilled in developing end-to-end solutions with React on the frontend, ensuring seamless client-server integration. Strong focus on writing clean, maintainable code and optimizing systems for performance, reliability, and scalability in real-world environments.`,
 
-Hands-on experience with cloud platforms like AWS, including deployment, storage, and 
-basic infrastructure management. 
-
-Passionate about writing clean, maintainable code and building systems that are efficient, 
-reliable, and production-ready.`,
-  // summary: `Software Developer with ~4 years of experience architecting robust backend systems,
-  // RESTful APIs, and microservices at scale. Deep expertise in Node.js, AWS cloud infrastructure,
-  // and polyglot persistence. I've owned end-to-end feature delivery for live global platforms,
-  // led engineering teams, and driven product reliability from inception through production.`,
-
-highlights: [
-  "Owned backend architecture, ensuring scalability, reliability, and performance",
-  "Built scalable REST APIs using Node.js and Express with clean architecture",
-  "Designed and optimized databases using MongoDB and MySQL",
-  "Worked with AWS services (Lambda, EC2, S3, RDS, VPC) for deployment and infrastructure",
-  "Implemented secure authentication (JWT, OAuth) and integrated payment systems (Stripe, Razorpay)",
-  "Optimized performance and handled high-volume concurrent requests efficiently"
-],
+  highlights: [
+    "Architected backend systems capable of handling thousands of concurrent requests efficiently",
+    "Developed 20+ production-grade REST APIs using Node.js and Express",
+    "Optimized database performance using indexing, query restructuring, and aggregation pipelines",
+    "Reduced API response time by 30–50% through query optimization and efficient data fetching strategies",
+    "Managed AWS infrastructure (EC2, S3, RDS, Lambda, VPC) for scalable and reliable deployments",
+    "Implemented secure authentication (JWT, OAuth) and integrated payment gateways (Stripe, Razorpay)",
+  ],
 
   experience: [
     {
@@ -89,8 +77,11 @@ highlights: [
     {
       id: "bookanartist",
       title: "BookAnArtist Platform",
-      description:
-        "A live global marketplace connecting artists and clients. I owned the complete backend — API design, payment flows, serverless architecture, and team leadership. The platform handles art purchases, gift card wallets, and live bookings for artists worldwide.",
+      description: `Developed backend APIs for artist booking workflows handling multiple concurrent user requests
+Designed scalable architecture capable of supporting thousands of users and bookings
+Optimized database queries and reduced API response time by ~30%
+Implemented secure authentication and role-based access (users, artists, admin)
+Integrated payment gateway (Razorpay/Stripe) for seamless transactions`,
       tech: ["Node.js", "MySQL", "AWS Lambda", "S3", "EC2", "Microservices"],
       live: "https://bookanartist.co",
       github: null,
@@ -99,9 +90,11 @@ highlights: [
     {
       id: "wescover",
       title: "Wescover Integration",
-      description:
-        "Extended platform integration for Wescover, enabling cross-platform art discovery and purchase flows. Maintained API consistency, data pipelines, and event-driven workflows connecting both ecosystems.",
-      tech: ["Node.js", "REST APIs", "AWS", "MySQL"],
+      description: `Developed backend APIs supporting cross-platform art discovery and workflows
+Built and maintained GraphQL APIs for flexible data querying and efficient data handling
+Implemented drip automation workflows for user engagement and communication
+Ensured API consistency and reliability across different services`,
+      tech: ["Node.js", "GraphQL", "REST APIs", "AWS", "MongoDB"],
       live: "https://wescover.com",
       github: null,
       featured: true,
@@ -109,8 +102,11 @@ highlights: [
     {
       id: "myfitnessmantra",
       title: "MyFitnessMantra",
-      description:
-        "A comprehensive fitness management platform built with a TypeScript-first backend and Angular frontend. Features include user progress tracking, workout plans, nutritional logs, and cloud-based media storage for exercise content.",
+      description: `Built full-stack fitness platform with scalable backend using Node.js and TypeScript
+Designed features for workout tracking, nutrition logs, and user progress analytics
+Implemented cloud-based media storage using AWS S3 for exercise content
+Optimized database queries and improved API performance significantly
+Integrated secure authentication and user data management systems`,
       tech: ["Node.js", "TypeScript", "Angular", "MongoDB", "S3", "EC2"],
       live: "https://myfitmantra.com",
       github: null,
@@ -119,9 +115,12 @@ highlights: [
     {
       id: "filesharingapp",
       title: "Cloud File-Sharing App",
-      description:
-        "A secure, full-stack file-sharing application with role-based access control, OAuth-based authentication, and scalable AWS S3 storage. Supports large file uploads, shareable links, and access management.",
-      tech: ["React.js", "Node.js", "MongoDB", "AWS S3", "Google OAuth"],
+      description: `Built a file-sharing application allowing users to upload and download files easily
+Implemented secure file upload and storage using AWS S3
+Generated shareable file links enabling other users to access and download files
+Handled file retrieval and download functionality through backend APIs
+Designed a simple and efficient system for file access and transfer`,
+      tech: ["React.js", "Node.js", "MongoDB", "AWS S3"],
       live: null,
       github: null,
       featured: false,
@@ -129,9 +128,12 @@ highlights: [
     {
       id: "accountmgmt",
       title: "Account Management Software",
-      description:
-        "An enterprise-grade account management tool handling user profiles, subscription tiers, billing integrations via Stripe, and audit logging. Built with a React frontend and Express/MongoDB backend.",
-      tech: ["React.js", "Node.js", "MongoDB", "Stripe", "Express.js"],
+      description: `Developed a full-stack account management system for handling user profiles and subscriptions
+Implemented Stripe integration for billing and payment workflows
+Built secure authentication and user session management
+Designed backend APIs for managing users, plans, and transactions
+Added audit logging for tracking user actions and system activities`,
+      tech: ["React.js", "Node.js", "MongoDB", "Razorpay", "Express.js"],
       live: null,
       github: null,
       featured: false,
