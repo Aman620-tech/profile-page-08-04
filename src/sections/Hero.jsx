@@ -5,8 +5,7 @@ import { resumeData } from "../utils/resumeData";
 const { personal } = resumeData;
 
 const RESUME_DOWNLOAD_URL =
-  "https://drive.google.com/uc?export=download&id=1Tbnxhg7r1fnFa45xy3v4PASCsRg1dvJa";
-
+  "https://drive.google.com/uc?export=download&id=1cdnQWLArtgGHc5eugeWZGu5hbKKLPD68";
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
