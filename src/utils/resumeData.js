@@ -141,10 +141,12 @@ Added audit logging for tracking user actions and system activities`,
   ],
 
   skills: {
-    Frontend: ["HTML5", "CSS3", "JavaScript", "React.js"],
+    Frontend: ["HTML5", "CSS3", "JavaScript", "React.js", "NextJS"],
     Backend: [
       "Node.js",
       "Express.js",
+      "fastify",
+      "NestJS",
       "TypeScript",
       "Sequelize",
       "Mongoose",
@@ -153,7 +155,7 @@ Added audit logging for tracking user actions and system activities`,
       "Stripe",
       "Razorpay",
     ],
-    Database: ["MongoDB", "MySQL", "PostgreSQL", "Oracle"],
+    Database: ["MongoDB", "MySQL", "PostgreSQL"],
     Cloud: [
       "AWS EC2",
       "AWS S3",
