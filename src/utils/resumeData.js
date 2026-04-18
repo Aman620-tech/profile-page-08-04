@@ -38,7 +38,7 @@ export const resumeData = {
       description:
         "Sole backend owner for a global artist-client marketplace serving thousands of users.",
       achievements: [
-        "Architected and maintained the full backend — API design, microservices, and feature delivery for bookanartist.co.",
+        "Architected and maintained the full backend - API design, microservices, and feature delivery for bookanartist.co.",
         "Built a buy-now art purchase flow and a gift card system with integrated wallet functionality.",
         "Led the Feature Lambda service, designing serverless workflows powering core platform operations at scale.",
         "Managed production deployments, service reliability, and cross-functional feature ownership.",
@@ -140,8 +140,15 @@ Added audit logging for tracking user actions and system activities`,
     },
     {
       id: "prabhaaindira",
-      title: "Prabha Indira Security Agency Pvt. Ltd. — Employee Management System",
-      description: `Developed a full-stack employee management system for a private security agency managing 50–200+ guards across multiple client sites Built complete Tender management module — client site contracts, owner details, guard deployment tracking, and contract expiry alerts Implemented daily Attendance system supporting Day Shift, Night Shift, and Extra Duty with bulk marking and monthly calendar view Engineered automated Salary generation with per-day rate calculation, night allowance, Extra Duty pay, ESI and PF deductions, and locked monthly payroll Designed Guard and Supervisor management with zone-based hierarchy, role-based access control for Director, Supervisor, and Admin roles Created printable Salary Slip generation and Excel export for monthly payroll sheets Built real-time Dashboard with live guard count, active tenders, today's duty summary, and absenteeism alerts Configured CI/CD pipeline for automated deployment of frontend on Vercel and backend on cloud infrastructure`,
+      title: "Prabha Indira Security Agency Pvt. Ltd. - Employee Management System",
+      description: `Developed a full-stack employee management system for a private security agency managing 50–200+ guards across multiple client sites
+      Built complete Tender management module - client site contracts, owner details, guard deployment tracking, and contract expiry alerts
+      Implemented daily Attendance system supporting Day Shift, Night Shift, and Extra Duty with bulk marking and monthly calendar view
+      Engineered automated Salary generation with per-day rate calculation, night allowance, Extra Duty pay, ESI and PF deductions, and locked monthly payroll
+      Designed Guard and Supervisor management with zone-based hierarchy, role-based access control for Director, Supervisor, and Admin roles
+      Created printable Salary Slip generation and Excel export for monthly payroll sheets
+      Built real-time Dashboard with live guard count, active tenders, today's duty summary, and absenteeism alerts
+      Configured CI/CD pipeline for automated deployment of frontend on Vercel and backend on cloud infrastructure`,
       tech: ["Next.js", "NestJS", "MongoDB", "CI/CD", "Vercel"],
       live: "https://frontend-tau-liard-gw91wvd620.vercel.app/",
       github: [
