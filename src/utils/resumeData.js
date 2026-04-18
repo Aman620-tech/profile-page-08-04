@@ -138,37 +138,35 @@ Added audit logging for tracking user actions and system activities`,
       github: null,
       featured: false,
     },
+    {
+      id: "prabhaaindira",
+      title: "Prabha Indira Security Agency Pvt. Ltd. — Employee Management System",
+      description: `Developed a full-stack employee management system for a private security agency managing 50–200+ guards across multiple client sites Built complete Tender management module — client site contracts, owner details, guard deployment tracking, and contract expiry alerts Implemented daily Attendance system supporting Day Shift, Night Shift, and Extra Duty with bulk marking and monthly calendar view Engineered automated Salary generation with per-day rate calculation, night allowance, Extra Duty pay, ESI and PF deductions, and locked monthly payroll Designed Guard and Supervisor management with zone-based hierarchy, role-based access control for Director, Supervisor, and Admin roles Created printable Salary Slip generation and Excel export for monthly payroll sheets Built real-time Dashboard with live guard count, active tenders, today's duty summary, and absenteeism alerts Configured CI/CD pipeline for automated deployment of frontend on Vercel and backend on cloud infrastructure`,
+      tech: ["Next.js", "NestJS", "MongoDB", "CI/CD", "Vercel"],
+      live: "https://frontend-tau-liard-gw91wvd620.vercel.app/",
+      github: [
+        "https://github.com/Aman620-tech/security_agency_nextjs",
+        "https://github.com/Aman620-tech/security_agency_nestJS"
+      ],
+      featured: true,
+    },
   ],
 
   skills: {
     Frontend: ["HTML5", "CSS3", "JavaScript", "React.js", "NextJS"],
     Backend: [
-      "Node.js",
-      "Express.js",
-      "fastify",
-      "NestJS",
-      "TypeScript",
-      "Sequelize",
-      "Mongoose",
-      "REST APIs",
-      "Microservices",
-      "Stripe",
-      "Razorpay",
+      "Node.js", "Express.js", "Fastify", "NestJS", "TypeScript",
+      "Sequelize", "Mongoose", "REST APIs", "Microservices", "Stripe", "Razorpay",
     ],
     Database: ["MongoDB", "MySQL", "PostgreSQL"],
     Cloud: [
-      "AWS EC2",
-      "AWS S3",
-      "AWS Lambda",
-      "AWS RDS",
-      "IAM",
-      "ELB",
-      "CloudWatch",
-      "SNS",
-      "AutoScaling",
+      "AWS EC2", "AWS S3", "AWS Lambda", "AWS RDS",
+      "IAM", "ELB", "CloudWatch", "SNS", "AutoScaling",
+    ],
+    DevOps: [
+      "CI/CD", "GitHub Actions", "Docker", "Vercel", "PM2", "Nginx",
     ],
   },
-
   education: [
     {
       degree: "Bachelor of Technology",

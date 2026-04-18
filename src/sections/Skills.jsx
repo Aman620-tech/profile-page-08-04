@@ -9,6 +9,7 @@ const categoryColors = {
   Backend: "from-accent/10 to-emerald-500/10 border-accent/20",
   Database: "from-purple-500/10 to-pink-500/10 border-purple-500/20",
   Cloud: "from-orange-500/10 to-amber-500/10 border-orange-500/20",
+  DevOps: "from-teal-500/10 to-green-500/10 border-teal-500/20",
 };
 
 const categoryAccent = {
@@ -23,6 +24,7 @@ const categoryIcon = {
   Backend: "🛠️",
   Database: "🗄️",
   Cloud: "☁️",
+  DevOps: "🔧",
 };
 
 export const Skills = () => {
