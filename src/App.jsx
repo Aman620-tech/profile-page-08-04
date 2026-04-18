@@ -7,10 +7,12 @@ import { Projects } from "./sections/Projects";
 import { Experience } from "./sections/Experience";
 import { Education } from "./sections/Education";
 import { Contact } from "./sections/Contact";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <div className="noise-overlay">
+      <Analytics/>
       <Navbar />
       <main>
         <Hero />
