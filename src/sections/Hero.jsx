@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowDown, Linkedin, Github, Mail, Download } from "lucide-react";
 import { resumeData } from "../utils/resumeData";
 
 const { personal } = resumeData;
 
 const RESUME_DOWNLOAD_URL =
-  "https://drive.google.com/uc?export=download&id=17ZWeBMb-GILtdexDm4f0LH7ds1dzgtmb";
+  "https://drive.google.com/uc?export=download&id=1BTDgqkW7t5BJIuJjNmunzU-9-bm57pjv";
+  // https://drive.google.com/file/d/1BTDgqkW7t5BJIuJjNmunzU-9-bm57pjv/view?usp=sharing
 
   const containerVariants = {
   hidden: {},
@@ -113,6 +114,20 @@ export const Hero = () => {
             variants={itemVariants}
             className="flex items-center gap-6"
           >
+            {personal.github && (
+              <>
+               <a 
+                  href={personal.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-silver-dim hover:text-frost transition-colors text-sm font-mono"
+                >
+                  <Github size={16} />
+                  <span className="hidden sm:inline">GitHub</span>
+                </a>
+                <span className="w-px h-4 bg-ink-muted" />
+              </>
+            )}
             <a
               href={personal.linkedin}
               target="_blank"

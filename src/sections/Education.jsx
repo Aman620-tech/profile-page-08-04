@@ -15,7 +15,13 @@ export const Education = () => {
           <h2 className="heading-lg mb-12">Education</h2>
         </FadeUp>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className={`grid gap-6 ${
+            education.length === 1
+              ? "max-w-md"
+              : "md:grid-cols-2 lg:grid-cols-3"
+          }`}
+        >
           {education.map((edu, i) => (
             <FadeUp key={i} delay={0.1 * i}>
               <div className="card-base card-hover p-6 lg:p-8 group">
@@ -26,14 +32,18 @@ export const Education = () => {
                 <p className="text-accent font-mono text-sm mb-3">{edu.field}</p>
                 <p className="text-silver text-sm font-body mb-4">{edu.institution}</p>
                 <div className="flex flex-col gap-1.5 text-silver-dim text-xs font-mono">
-                  <span className="flex items-center gap-2">
-                    <MapPin size={11} />
-                    {edu.location}
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <Calendar size={11} />
-                    {edu.period}
-                  </span>
+                  {edu.location && (
+                    <span className="flex items-center gap-2">
+                      <MapPin size={11} />
+                      {edu.location}
+                    </span>
+                  )}
+                  {edu.period && (
+                    <span className="flex items-center gap-2">
+                      <Calendar size={11} />
+                      {edu.period}
+                    </span>
+                  )}
                 </div>
               </div>
             </FadeUp>

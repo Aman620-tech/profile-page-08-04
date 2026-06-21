@@ -23,13 +23,25 @@ export const SectionWrapper = ({ id, className = "", children }) => (
   </motion.section>
 );
 
+// export const FadeUp = ({ children, delay = 0, className = "" }) => (
+//   <motion.div
+//     className={className}
+//     variants={{
+//       hidden: { opacity: 0, y: 32 },
+//       visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay } },
+//     }}
+//   >
+//     {children}
+//   </motion.div>
+// );
+
 export const FadeUp = ({ children, delay = 0, className = "" }) => (
   <motion.div
     className={className}
-    variants={{
-      hidden: { opacity: 0, y: 32 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay } },
-    }}
+    initial={{ opacity: 0, y: 32 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-40px" }}
+    transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay }}
   >
     {children}
   </motion.div>

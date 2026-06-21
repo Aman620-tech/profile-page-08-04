@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Calendar, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, ExternalLink } from "lucide-react";
 import { resumeData } from "../utils/resumeData";
 import { SectionWrapper, FadeUp } from "../components/SectionWrapper";
 
@@ -23,16 +23,25 @@ export const Experience = () => {
           <div className="space-y-10 lg:space-y-0">
             {experience.map((exp, i) => (
               <FadeUp key={exp.id} delay={0.1 * i}>
-                <div className={`relative lg:grid lg:grid-cols-2 lg:gap-12 ${i > 0 ? "lg:mt-16" : ""}`}>
+                <div
+                  className={`relative lg:grid lg:grid-cols-2 lg:gap-12 ${i > 0 ? "lg:mt-16" : ""}`}
+                >
                   {/* Timeline dot */}
                   <div className="absolute left-0 lg:left-[calc(50%-5px)] top-6 w-2.5 h-2.5 rounded-full bg-accent border-2 border-ink shadow-[0_0_12px_rgba(0,255,135,0.5)] hidden lg:block z-10" />
-
+                  <h3 className="font-display font-700 text-frost text-xl mb-1 flex items-center gap-2 lg:justify-end">
+                    <Briefcase size={16} className="text-accent shrink-0" />
+                    {exp.role}
+                  </h3>
                   {/* Left: Meta */}
-                  <div className={`lg:text-right mb-6 lg:mb-0 lg:pr-10 ${i % 2 === 1 ? "lg:order-2 lg:text-left lg:pr-0 lg:pl-10" : ""}`}>
+                  <div
+                    className={`lg:text-right mb-6 lg:mb-0 lg:pr-10 ${i % 2 === 1 ? "lg:order-2 lg:text-left lg:pr-0 lg:pl-10" : ""}`}
+                  >
                     <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent font-mono text-xs px-3 py-1 rounded-full mb-3">
                       {exp.type}
                     </div>
-                    <h3 className="font-display font-700 text-frost text-xl mb-1">{exp.role}</h3>
+                    <h3 className="font-display font-700 text-frost text-xl mb-1">
+                      {exp.role}
+                    </h3>
                     <div className="flex items-center gap-2 mb-2 lg:justify-end flex-wrap">
                       {exp.url !== "#" ? (
                         <a
@@ -45,7 +54,9 @@ export const Experience = () => {
                           <ExternalLink size={12} />
                         </a>
                       ) : (
-                        <span className="text-accent text-sm font-body">{exp.company}</span>
+                        <span className="text-accent text-sm font-body">
+                          {exp.company}
+                        </span>
                       )}
                     </div>
                     <div className="flex items-center gap-2 text-silver-dim text-xs font-mono">
@@ -55,9 +66,13 @@ export const Experience = () => {
                   </div>
 
                   {/* Right: Card */}
-                  <div className={`lg:pl-10 ${i % 2 === 1 ? "lg:order-1 lg:pl-0 lg:pr-10" : ""}`}>
+                  <div
+                    className={`lg:pl-10 ${i % 2 === 1 ? "lg:order-1 lg:pl-0 lg:pr-10" : ""}`}
+                  >
                     <div className="card-base card-hover p-6">
-                      <p className="text-silver text-sm mb-5 italic">{exp.description}</p>
+                      <p className="text-silver text-sm mb-5 italic">
+                        {exp.description}
+                      </p>
                       <ul className="space-y-3">
                         {exp.achievements.map((a, ai) => (
                           <motion.li

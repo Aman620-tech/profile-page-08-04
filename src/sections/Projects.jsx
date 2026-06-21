@@ -1,16 +1,39 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  ArrowRight,
+  ShoppingBag,
+  Workflow,
+  Dumbbell,
+  FolderUp,
+  CreditCard,
+  Users,
+  Code2,
+} from "lucide-react";
 import { resumeData } from "../utils/resumeData";
 import { SectionWrapper, FadeUp } from "../components/SectionWrapper";
 
 const { projects } = resumeData;
 
-const INITIAL_COUNT = 6;
+const INITIAL_COUNT = 2;
+
+// Maps each project id to a representative icon. Falls back to a generic
+// code icon so any new project added to resumeData never renders blank.
+const PROJECT_ICON = {
+  bookanartist: ShoppingBag,
+  wescover: Workflow,
+  myfitnessmantra: Dumbbell,
+  filesharingapp: FolderUp,
+  accountmgmt: CreditCard,
+  prabhaaindira: Users,
+};
 
 const ProjectCard = ({ project, index }) => {
   // convert description into bullet points
   const points = project.description.split("\n");
+  const Icon = PROJECT_ICON[project.id] || Code2;
 
   return (
     <FadeUp delay={0.08 * index}>
@@ -20,10 +43,14 @@ const ProjectCard = ({ project, index }) => {
 
           {/* FRONT */}
           <motion.div
-            className="flip-card-front card-base p-8 flex flex-col items-center justify-center gap-4 bg-ink-soft/40"
+            className="flip-card-front card-base p-8 flex flex-col items-center justify-center gap-4 bg-ink-soft/40 relative"
           >
-            <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-mono font-bold">
+            <span className="absolute top-4 left-5 font-mono text-[11px] text-silver-dim tracking-widest">
               {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+              <Icon size={26} strokeWidth={1.75} />
             </div>
 
             <h3 className="font-display font-bold text-frost text-xl text-center">
@@ -39,22 +66,37 @@ const ProjectCard = ({ project, index }) => {
           <div className="flip-card-back card-base p-7 flex flex-col bg-ink-soft/40">
             
             <div className="flex items-start justify-between mb-4">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-mono font-bold text-sm">
-                {String(index + 1).padStart(2, "0")}
+              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+                <Icon size={18} strokeWidth={1.75} />
               </div>
 
               <div className="flex gap-2">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg border border-ink-muted flex items-center justify-center text-silver-dim hover:text-frost hover:border-frost/30 transition-all"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Github size={15} />
-                  </a>
-                )}
+                {project.github &&
+                  (Array.isArray(project.github) ? (
+                    project.github.map((url, gi) => (
+                      <a
+                        key={url}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={gi === 0 ? "Frontend repo" : "Backend repo"}
+                        className="w-9 h-9 rounded-lg border border-ink-muted flex items-center justify-center text-silver-dim hover:text-frost hover:border-frost/30 transition-all"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Github size={15} />
+                      </a>
+                    ))
+                  ) : (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-lg border border-ink-muted flex items-center justify-center text-silver-dim hover:text-frost hover:border-frost/30 transition-all"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github size={15} />
+                    </a>
+                  ))}
 
                 {project.live && (
                   <a

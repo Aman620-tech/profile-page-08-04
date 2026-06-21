@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { resumeData } from "../utils/resumeData";
+
+const { personal } = resumeData;
 
 const NAV_ITEMS = [
   { label: "About", href: "#about" },
@@ -48,7 +51,7 @@ export const Navbar = () => {
             {NAV_ITEMS.map(({ label, href }) => {
               const id = href.replace("#", "");
               return (
-                <a
+                <a 
                   key={label}
                   href={href}
                   className={`nav-link ${activeSection === id ? "active" : ""}`}
@@ -66,14 +69,19 @@ export const Navbar = () => {
           </nav>
 
           {/* Desktop CTA */}
-          {/* <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={() => window.open("mailto:pandeyaman997@gmail.com", "_blank")}
-              className="btn-secondary text-sm py-2 px-4"
-            >
-              Hire Me
-            </button>
-          </div> */}
+          <div className="hidden md:flex items-center gap-4">
+            {personal.github && (
+              <a 
+                href={personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-silver-dim hover:text-accent transition-colors"
+              >
+                <Github size={18} />
+              </a>
+            )}
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -106,15 +114,18 @@ export const Navbar = () => {
                   {label}
                 </a>
               ))}
-              {/* <button
-                onClick={() => {
-                  setMenuOpen(false);
-                  window.open("mailto:pandeyaman997@gmail.com", "_blank");
-                }}
-                className="btn-primary mt-2 self-start"
-              >
-                Hire Me
-              </button> */}
+              {personal.github && (
+                <a
+                  href={personal.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-silver hover:text-frost transition-colors py-1 text-base font-display"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <Github size={18} />
+                  GitHub
+                </a>
+              )}
             </nav>
           </motion.div>
         )}

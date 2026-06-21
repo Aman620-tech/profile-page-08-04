@@ -4,8 +4,8 @@ import {
   CheckCircle,
   AlertCircle,
   Linkedin,
+  Github,
   Mail,
-  Phone,
 } from "lucide-react";
 import { useContactForm } from "../hooks/useContactForm";
 import { resumeData } from "../utils/resumeData";
@@ -89,14 +89,6 @@ export const Contact = () => {
                       window.location.href = `mailto:${personal.email}`;
                     },
                   },
-                  // {
-                  //   icon: Phone,
-                  //   label: "Phone",
-                  //   value: personal.phone,
-                  //   action: () => {
-                  //     window.location.href = `tel:${personal.phone}`;
-                  //   },
-                  // },
                   {
                     icon: Linkedin,
                     label: "LinkedIn",
@@ -105,6 +97,18 @@ export const Contact = () => {
                       window.open(personal.linkedin, "_blank");
                     },
                   },
+                  ...(personal.github
+                    ? [
+                        {
+                          icon: Github,
+                          label: "GitHub",
+                          value: personal.github.replace("https://", ""),
+                          action: () => {
+                            window.open(personal.github, "_blank");
+                          },
+                        },
+                      ]
+                    : []),
                 ].map(({ icon: Icon, label, value, action }) => (
                   <div
                     key={label}
